@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
-import { BesteApiServerlessStack } from '../lib/beste-api-serverless-stack';
+import "source-map-support/register";
+import * as cdk from "aws-cdk-lib";
+import { BesteApiServerlessStack } from "../lib/beste-api-serverless-stack";
 
 const app = new cdk.App();
-new BesteApiServerlessStack(app, 'BesteApiServerlessStack', {
+new BesteApiServerlessStack(app, "BesteApiServerlessStack", {
+  env: { account: "897469443626", region: "eu-west-1" },
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
