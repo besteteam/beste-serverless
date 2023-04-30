@@ -7,14 +7,19 @@ help:
 
 .DEFAULT_GOAL := help
 
-setup:
-	cd beste-web && yarn && cd deploy && yarn
+setup-web:
+	cd beste-web && yarn
+
+setup-deploy:
+	cd deploy && yarn
+
+setup: setup-web setup-deploy		## install everything
 
 build:
 	cd beste-web && yarn build
 
-cdk-deploy:
-	cd deploy && yarn cdk deploy BesteNextServerlessStack
+cdk-deploy:		## deploy what's already built (might result in deploying old builds)
+	cd deploy && yarn cdk deploy BesteWebStackProd
 
 deploy: setup build cdk-deploy		## deploy web app
 
