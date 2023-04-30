@@ -1,14 +1,16 @@
-# Welcome to your CDK TypeScript project
+# Beste API Serverless
 
-This is a blank project for CDK development with TypeScript.
+## TODO
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+- [ ] Structured way of migrating db: https://spin.atomicobject.com/2020/10/20/dynamodb-migrate-data-structures/
+- [ ] Deploy frontend as static, for easier testing
+- [ ] Cognito
+- [ ] Remove API key auth in API
+- [ ] Google provider for Cognito
+- [ ] Make Apollo talk to Cognito. Preferably with JWT
+- [ ] Sign in from frontend
+- [ ] Proper local env
+  - [ ] Dynamodb
+  - [ ] Apollo
+  - [ ] Frontend
+  - [ ] Cognito
