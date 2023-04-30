@@ -3,7 +3,7 @@
 ## TODO
 
 - [ ] Structured way of migrating db: https://spin.atomicobject.com/2020/10/20/dynamodb-migrate-data-structures/
-- [ ] Deploy frontend as static, for easier testing
+- [x] Deploy frontend as static, for easier testing
 - [ ] Cognito
 - [ ] Remove API key auth in API
 - [ ] Google provider for Cognito
