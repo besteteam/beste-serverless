@@ -5,11 +5,11 @@ import { BesteApiStack } from "../lib/ApiStack";
 import { BesteWebStack } from "../lib/WebStack";
 
 const app = new cdk.App();
-// new BesteApiStack(app, "BesteApiStackProd", {
-//   env: { account: "897469443626", region: "eu-west-1" },
-//   domainName: "bestetipset.se",
-//   siteSubDomain: "api",
-// });
+new BesteApiStack(app, "BesteApiStackProd", {
+  env: { account: "897469443626", region: "eu-west-1" },
+  domainName: "bestetipset.se",
+  siteSubDomain: "api",
+});
 
 new BesteWebStack(app, "BesteWebStackProd", {
   env: { account: "897469443626", region: "eu-west-1" },

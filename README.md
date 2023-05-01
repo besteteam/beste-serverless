@@ -14,7 +14,7 @@ make dev
 - [ ] Structured way of migrating db: https://spin.atomicobject.com/2020/10/20/dynamodb-migrate-data-structures/
 - [x] Deploy frontend as static, for easier testing
 - [ ] Cognito
-- [ ] Single repo for both
+- [x] Single repo for both
 - [ ] Remove API key auth in API
 - [ ] Google provider for Cognito
 - [ ] Make Apollo talk to Cognito. Preferably with JWT
@@ -22,5 +22,5 @@ make dev
 - [ ] Proper local env
   - [ ] Dynamodb
   - [ ] Apollo
-  - [ ] Frontend
+  - [x] Frontend
   - [ ] Cognito

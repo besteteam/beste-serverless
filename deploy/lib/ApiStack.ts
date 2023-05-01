@@ -19,8 +19,12 @@ export class BesteApiStack extends cdk.Stack {
     const lambda = new NodejsFunction(this, "GraphqlLambda", {
       runtime: Runtime.NODEJS_18_X,
       //   entry: path.join(__dirname, `/../functions/addUserLambda.ts`),
-      entry: path.join(__dirname, `../../api/src/server.ts`),
+      entry: path.join(__dirname, `../api-copy/src/server.ts`),
       handler: "handler",
+      // depsLockFilePath: path.join(__dirname, "../../../api/src/yarn.lock"),
+      // bundling: {
+      //   externalModules: ["graphql"], // remove?
+      // },
       // environment: {
       //   TABLENAME: userTable.tableName,
       // },

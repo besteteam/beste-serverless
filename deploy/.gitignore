@@ -8,3 +8,6 @@ node_modules
 cdk.out
 
 cdk.context.json
+
+# Workaround: Ignore moved api src in deploy folder
+api-copy

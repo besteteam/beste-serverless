@@ -10,20 +10,31 @@ help:
 setup-web:
 	cd web && yarn
 
+setup-api:
+	cd web && yarn
+
 setup-deploy:
 	cd deploy && yarn
 
-setup: setup-web setup-deploy		## install everything
+setup: setup-web setup-api setup-deploy		## install everything
 
 build-web:
 	cd web && yarn build
 
-build: build-web
+copy-api:
+	cp -R ./api ./deploy/api-copy
 
-cdk-deploy:		## deploy what's already built (might result in deploying old builds)
+build-api: copy-api
+
+cdk-deploy-web:
 	cd deploy && yarn cdk deploy BesteWebStackProd
 
-deploy: setup build cdk-deploy		## deploy web app
+cdk-deploy-api:
+	cd deploy && yarn cdk deploy BesteApiStackProd
 
-dev:		## start dev server
+deploy-web: setup build-web cdk-deploy-web		## deploy web app
+
+deploy-api: setup build-api cdk-deploy-api		## deploy api
+
+web-dev:		## start dev server
 	cd web && yarn dev
