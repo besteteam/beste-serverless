@@ -3,10 +3,6 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault,
 } from "@apollo/server/plugin/landingPage/default";
-import {
-  handlers,
-  startServerAndCreateLambdaHandler,
-} from "@as-integrations/aws-lambda";
 
 // The GraphQL schema
 const typeDefs = `#graphql
@@ -40,24 +36,4 @@ const server = new ApolloServer({
   ],
 });
 
-export const handler = startServerAndCreateLambdaHandler(
-  server,
-  handlers.createAPIGatewayProxyEventRequestHandler()
-  // {
-  //   context: async ({ context, event }) => {
-  //     return Promise.resolve({
-  //       context,
-  //       event,
-  //       function: context.functionName,
-  //       headers: event.headers,
-  //     });
-  //   },
-  // }
-  //   {
-  //     middleware: [
-  //       async (event) => {
-  //         console.log("###? received event=" + JSON.stringify(event));
-  //       },
-  //     ],
-  //   }
-);
+export default server;
