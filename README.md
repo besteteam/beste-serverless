@@ -21,6 +21,7 @@ make dev
 - [ ] Sign in from frontend
 - [ ] Proper local env
   - [ ] Dynamodb
-  - [ ] Apollo
+  - [x] Apollo
+    - [ ] hot reload?
   - [x] Frontend
   - [ ] Cognito
