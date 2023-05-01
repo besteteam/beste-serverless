@@ -8,15 +8,17 @@ help:
 .DEFAULT_GOAL := help
 
 setup-web:
-	cd beste-web && yarn
+	cd web && yarn
 
 setup-deploy:
 	cd deploy && yarn
 
 setup: setup-web setup-deploy		## install everything
 
-build:
-	cd beste-web && yarn build
+build-web:
+	cd web && yarn build
+
+build: build-web
 
 cdk-deploy:		## deploy what's already built (might result in deploying old builds)
 	cd deploy && yarn cdk deploy BesteWebStackProd
@@ -24,4 +26,4 @@ cdk-deploy:		## deploy what's already built (might result in deploying old build
 deploy: setup build cdk-deploy		## deploy web app
 
 dev:		## start dev server
-	cd beste-web && yarn dev
+	cd web && yarn dev
