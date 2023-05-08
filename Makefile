@@ -16,7 +16,10 @@ setup-api:
 setup-deploy:
 	cd deploy && yarn
 
-setup: setup-web setup-api setup-deploy		## install everything
+setup-local-db:
+	mkdir -p ./my-dynamodb-data && sudo chmod 777 ./my-dynamodb-data
+
+setup: setup-web setup-api setup-deploy setup-local-db		## install and setup everything for development
 
 build-web:
 	cd web && yarn build
@@ -36,8 +39,11 @@ deploy-web: setup build-web cdk-deploy-web		## deploy web app
 
 deploy-api: setup build-api cdk-deploy-api		## deploy api
 
-web-dev:		## start web dev server
+web-dev:		## start web dev server (localhost:3000)
 	cd web && yarn dev
 
-api-dev:		## start api dev server
+api-dev:		## start api dev server (localhost:4000)
 	cd api && yarn dev
+
+db-dev:		## start local db (server -> localhost:8000, admin -> localhost:8001)
+	docker compose up

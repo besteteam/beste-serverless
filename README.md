@@ -22,7 +22,7 @@ make dev
 - [ ] Make Apollo talk to Cognito. Preferably with JWT
 - [ ] Sign in from frontend
 - [ ] Proper local env
-  - [ ] Dynamodb
+  - [x] Dynamodb
   - [x] Apollo
     - [x] hot reload?
   - [x] Frontend
