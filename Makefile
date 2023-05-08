@@ -36,5 +36,8 @@ deploy-web: setup build-web cdk-deploy-web		## deploy web app
 
 deploy-api: setup build-api cdk-deploy-api		## deploy api
 
-web-dev:		## start dev server
+web-dev:		## start web dev server
 	cd web && yarn dev
+
+api-dev:		## start api dev server
+	cd api && yarn dev
